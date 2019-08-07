@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="indexDao" class="com.alistar.dao.impl.IndexDaoImpl"></bean>
+
+    <bean id="indexService" class="com.alistar.service.IndexService">
+        <property name="indexDao" ref="indexDao"></property>
+    </bean>
+
+    <bean id="cnstService" class="com.alistar.service.CnstService">
+        <constructor-arg name="indexDao" ref="indexDao"></constructor-arg>
+    </bean>
+</beans>
